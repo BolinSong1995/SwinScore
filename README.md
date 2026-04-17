@@ -1,9 +1,3 @@
-# CT Lung Micropapillary/Solid Classification
-
-Binary classification of micropapillary/solid histological subtype from CT scans using a Vision Transformer (ViT) trained on tumor ROI crops.
-
----
-
 ## Project layout
 
 ```text

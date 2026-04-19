@@ -29,7 +29,7 @@ class RadDataset(Dataset):
         self.y = np.array(df["DFS_3years"]).astype(np.float32)
         self.time = np.array(df["DFS"]).astype(np.float32)
         self.event = np.array(df["DFS_censor"]).astype(np.float32)
-        self.ID = np.array(df["radiology_folder_name"])
+        self.ID = np.array(df["radiology_folder_name"].astype(str))
 
 
         self.dim = dim
@@ -107,7 +107,8 @@ class RadDataset(Dataset):
 
     def __getitem__(self, index):
 
-        ct_image, _ = load(os.path.join(self.root_data, self.df["radiology_folder_name"].iloc[index], "CT_img.nii.gz"))
+        folder_name = str(self.df["radiology_folder_name"].iloc[index]).strip()
+        ct_image, _ = load(os.path.join(self.root_data, folder_name, "CT_img.nii.gz"))
 
         
         ct_image = utils.soft_tissue_window(ct_image)

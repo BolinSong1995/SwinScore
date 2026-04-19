@@ -16,6 +16,7 @@ def build_ct_boxes(path):
     for label_name in ['label.nii.gz', 'node.nii.gz']:
         X_min, X_max, Y_min, Y_max, Z_min, Z_max = [], [], [], [], [], []
         for patient in df["radiology_folder_name"]:
+            patient = str(patient)
             print(os.path.join(path, patient, label_name))
             if os.path.isfile(os.path.join(
                     path, patient, label_name)):

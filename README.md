@@ -1,7 +1,7 @@
 ## Project layout
 
 ```text
-p16_positive_opc_ct/
+SwinScore/
 ├── radiology/                                      # CT imaging data paarent folder
 │   ├── data_table.csv                              # clinical data
 │   ├── data_table_test.csv                         # clinical data + computed tumor bounding boxes coordinates (obtained from Step 1 below)
@@ -44,7 +44,7 @@ p16_positive_opc_ct/
 Make sure you have a file called `data_table.csv` at:
 
 ```text
-.\p16_positive_opc_ct\radiology\
+.\SwinScore\radiology\
 ```
 
 This file is the clinical sheet on the test cohort. It should contain **one row per patient** with the following required columns:
@@ -61,7 +61,7 @@ This file is the clinical sheet on the test cohort. It should contain **one row 
 > **Important:** You must have `data_table.csv` (clinical sheet from the previous step) inside:
 >
 > ```text
-> .\p16_positive_opc_ct\radiology\
+> .\SwinScore\radiology\
 > ```
 
 This step generates `data_table_test.csv` with the following new columns:
